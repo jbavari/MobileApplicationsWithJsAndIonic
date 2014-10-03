@@ -43,98 +43,232 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>Mobile Applications</h1>
+					<h3>with JS &amp; Ionic</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created by <a href="http://jbavari.github.io">Josh Bavari</a> / <a href="http://twitter.com/jbavari">@jbavari</a></small>
 					</p>
 				</section>
 
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+        <section>
+          <h2>Assumptions</h2>
+          <ul>
+            <li>You are a dev who knows HTML / CSS / JS</li>
+            <li>You want to build iOS &amp; Android mobile apps</li>
+            <li>You may or may not understand native dev on iOS &amp; Android</li>
+          </ul>
+        </section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+        <section>
+          <h2>Why I am here</h2>
+          <ul>
+            <li>I've enjoyed building mobile apps with JS for 2 1/2 years</li>
+            <li>I've created apps for platforms quickly with small teams</li>
+            <li>I want to share this knowledge with you</li>
+            <li>I want to see the awesome things you can build after this talk</li>
+          </ul>
+        </section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+        <section>
+          <h2>My goal is to educate</h2>
+          <p>
+            I am here to convince you that I'm not trying to convince you. <br>
+            I am trying to educate you, so you can make educated decisions.<br>
+          </p>
+        </section>
+
+        <section>
+          <h2>Current State of Mobile Development</h2>
+          <ul>
+            <li>Basic CRUD apps - some 90% of the market</li>
+            <li>Graphic Intensive apps (games/simulations)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Approaches for Mobile Development</h2>
+          <ul>
+            <li>Native Code - Obj-C / Swift or Java</li>
+            <!-- <li>Objective-C / Swift for iOS</li>
+            <li>Java for Android</li> -->
+            <li>Translates to native - RubyMotion / Titanium / Xamarin</li>
+            <li>JavaScript that bridges to Native</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Approaches</h2>
+          <img alt="show image of native vs hybrid" src="/img/Native_html5_hybrid.png">
+        </section>
+
+        <section>
+          <h2>We call them 'Hybrid Apps'</h2>
+          <img>
+        </section>
+
+        <section>
+          <h2>When to go with Native / Translated?</h2>
+          <ul>
+            <li>You need an intensive graphics app</li>
+            <li>You need ultimate performance (compiled code)</li>
+            <li>You can afford to support multiple code bases</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>When to go with Hybrid</h2>
+          <ul>
+            <li>You want a CRUD app (for the most part)</li>
+            <li>You need to support multiple platforms</li>
+            <li>You cant afford to make changes on multiple code bases</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Hybrid can still use native code!</h2>
+          <ul>
+            <li>With Plugins, you can use native functionality</li>
+            <li>Plugins connect JavaScript to native code</li>
+            <li>Camera, GPS, Facebook, ETC</li>
+          </ul>
+        </section>
 
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h2>Hybrid Development Tools</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
+            <li><a href="">Cordova / PhoneGap</a></li>
+            <li><a href="https://crosswalk-project.org/">CrossWalk</a></li>
+            <li>Native SDKs - XCode &and; the Android SDK</li>
+          </ul>
+				</section>
+
+        <section>
+          <h2>How it works</h2>
+          <img alt="Phonegap image of how code is execute both native and JS">
+        </section>
+
+				<section>
+					<h2>Clarification - PhoneGap == Cordova</h2>
+					<ul>
+            <li>Cordova is an Apache project (OS)</li>
+            <li>PhoneGap is powered by Cordova</li>
+            <li>PhoneGap is owned by Adobe</li>
+            <li>PhoneGap provides additional services</li>
+          </ul>
+				</section>
+
+        <section>
+          <h2>A few more assumptions</h2>
+          <ul>
+            <li>I'll use Cordova / PhoneGap interchangibly</li>
+            <li>The rest of the talk, we are creating hybrid apps</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Getting started with Hybrid Dev</h2>
+          <ul>
+            <li>Roll your own framework</li>
+            <li>jQuery Mobile / Sencha / OnSen</li>
+            <li><a href="http://ionicframework.com">Ionic Framework</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Problems you face with Hybrid Dev</h2>
+          <ul>
+            <li>Getting Native SDKs set up</li>
+            <li>Having a common starting place</li>
+            <li>Setting up mobile app states</li>
+            <li>Templates for HTML/Sass/CSS</li>
+            <li>Handling some native look/feel</li>
+            <li>Using Plugins with Callbacks</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Solutions Ionic Provides</h2>
+          <ul>
+            <li><a href="https://github.com/driftyco/ionic-box">The Ionic Box</a> - Vagrant set up for Android SDKs</li>
+            <li><a href="https://github.com/driftyco/ionic-app-base">Starter templates</a> with Tabs or slide out menus</li>
+            <li>Templates for UI-router states - controllers / views</li>
+            <li>Template for customizable SASS sheets</li>
+            <li>Controls &amp; animations that look native</li>
+            <li>ngCordova - Promises for Plugins</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Additional conveniences from Ionic</h2>
+          <ul>
+            <li>Keyboard plugin - to help with native hide/show/utility</li>
+            <li>Native Scrolling</li>
+            <li>Error handling / catchers</li>
+            <li>App ready event</li>
+            <li>collection-repeat - render lists of tons of items with no performance hit</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Lets Focus on Ionic Framework</h2>
+          <ul>
+            <li>Built with AngularJS</li>
+            <li>Ionic starts you on the happy path</li>
+            <li>Ionic gives us common ground</li>
+            <li>Huge community support</li>
+            <li>Framework with UI elements - list, buttons, icons</li>
+            <li>JS controls with delegates</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Getting Started with Ionic</h2>
+          <div class="app-code" style="float: left; width: 40%;">
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+// Install what we need
+npm install -g ionic cordova
+// Set up boilerplate
+ionic start new_app tabs
+cd new_app
+// Add platforms as needed
+cordova platform add ios
+          </code></pre>
+          </div>
+          <div>
+            <iframe src="http://localhost:8100/#/tab/dash" style="height: 568px; width: 320px;">
+            </iframe>
+          </div>
+        </section>
+
+        <section>
+          <h2>What was set up?</h2>
+          <ul>
+            <li>Bower - packages for ionic &amp; dependencies</li>
+            <li>npm - package with dependencies</li>
+            <li>Customizable SASS sheet - ionic.app.scss</li>
+            <li>Gulpfile - tasks for compilation, deploy, web server, livereload</li>
+            <li>Platforms folder - generated native code wrappers</li>
+          </ul>
+        </section>
+
+				<section>
+					<h2>What about the boilerplate app?</h2>
+					<ul>
+            <li>www folder - with css/img/js/lib/templates</li>
+            <li>js/app.js - app routing for states / templates</li>
+            <li>controllers.js - Angular JS Controllers</li>
+            <li>services.js - AngularJS services</li>
+          </ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
+					<h2>Development Cycle</h2>
+					<ul>
+            <li>Run in the browser - ionic serve</li>
+            <li>Run on native simulator - ionic emulate ios/android</li>
+            <li>Run on native device - ionic run ios</li>
+            <li>Bonus - Livereload web / native with --livereload flag</li>
+          </ul>
 				</section>
 
 				<section data-markdown>
