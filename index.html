@@ -16,6 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="css/ionicons.min.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -44,6 +45,46 @@
       li {
         list-style-type: none;
       }
+      .reveal section img {
+        background-color: transparent;
+        border: 0;
+        box-shadow: 0
+      }
+      .reveal .pill {
+        border: solid 1px white;
+        border-radius: 13px;
+        margin: 10px;
+        padding: 10px;
+      }
+      .reveal .web-pill {
+        background-color: #4E8EF7;
+      }
+      .reveal .view-pill {
+        background-color: #3F7FE9;
+      }
+      .reveal .native-pill {
+        background-color: #2B6CD6;
+      }
+      .iphone-border {
+        border: solid 3px black;
+        border-radius: 5px;
+      }
+
+      #code_highlight {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 1000;
+      }
+
+      #code_highlight pre, #code_highlight code {
+          height: 100%;
+          width: 100%;
+          font-size: 1.5em;
+          overflow: auto;
+      }
     </style>
 
 		<!--[if lt IE 9]>
@@ -67,16 +108,9 @@
 				</section>
 
         <section>
-          <h2>Live Demo</h2>
-          <p>
-            Download the PhoneGap Developer app. <br>We'll use it later to have a LIVE demo of an Ionic application.
-          </p>
-        </section>
-
-        <section>
           <h2>Assumptions</h2>
           <ul>
-            <li>You are a dev who knows HTML / CSS / JS</li>
+            <li>You know HTML / CSS / JS</li>
             <li>You want to build iOS &amp; Android mobile apps</li>
             <li>You may or may not understand native dev on iOS &amp; Android</li>
           </ul>
@@ -84,18 +118,18 @@
 
         <section>
           <h2>Why I am here</h2>
-          <ul>
+          <!-- <ul>
             <li>I've enjoyed building mobile apps with JS for 2 1/2 years</li>
             <li>I've created apps for platforms quickly with small teams</li>
             <li>I want to share this knowledge with you</li>
             <li>I want to see the awesome things you can build after this talk</li>
-          </ul>
+          </ul> -->
         </section>
 
         <section>
           <h2>My goal is to educate</h2>
           <p>
-            I am not saying this is the BEST way to do mobile dev.<br>
+            I can only tell you what I know from my experience.<br>
             I am trying to educate you, so you can make educated decisions.<br>
           </p>
         </section>
@@ -112,8 +146,6 @@
           <h2>Approaches for Mobile Development</h2>
           <ul>
             <li>Native Code - Obj-C / Swift or Java</li>
-            <!-- <li>Objective-C / Swift for iOS</li>
-            <li>Java for Android</li> -->
             <li>Translates to native - RubyMotion / Titanium / Xamarin</li>
             <li>JavaScript that bridges to Native</li>
           </ul>
@@ -126,74 +158,77 @@
 
         <section>
           <h2>We call them 'Hybrid Apps'</h2>
-          <img src="img/pg_architecture.png">
+          <div class="pill web-pill">
+            HTML, CSS, JS
+          </div>
+          <div class="pill view-pill">
+            Native WebView
+          </div>
+          <div class="pill bridge-pill">
+            Native plugins
+          </div>
+          <div class="pill native-pill">
+            Native Implementation
+          </div>
         </section>
 
         <section>
           <h2>When to go with Native / Translated?</h2>
           <ul>
-            <li>You need an intensive graphics app</li>
-            <li>You need ultimate performance (compiled code)</li>
-            <li>You can afford to support multiple code bases</li>
+            <li>Intensive graphics app</li>
+            <li>Niche use cases</li>
+            <li>Afford to support multiple code bases / devs</li>
           </ul>
         </section>
 
         <section>
           <h2>When to go with Hybrid</h2>
           <ul>
-            <li>You want a CRUD app (for the most part)</li>
-            <li>You need to support multiple platforms</li>
-            <li>You cant afford to make changes on multiple code bases</li>
+            <li>CRUD app (for the most part)</li>
+            <li>Support multiple platforms</li>
+            <li>Single code bases</li>
           </ul>
         </section>
 
         <section>
           <h2>Hybrid can still use native code!</h2>
           <ul>
-            <li>With Plugins, you can use native functionality</li>
-            <li>Plugins connect JavaScript to native code</li>
-            <li>Camera, GPS, Facebook, ETC</li>
+            <li>Plugins allow native functionality</li>
+            <li>Plugins = Camera, GPS, Facebook, ETC</li>
+            <li>Plugins = JS -> Native</li>
           </ul>
         </section>
 
 				<section>
-					<h2>Hybrid Development Tools</h2>
+					<h2>Hybrid Development Kit</h2>
 					<ul>
-            <li><a href="">Cordova / PhoneGap</a></li>
-            <li><a href="https://crosswalk-project.org/">CrossWalk</a></li>
-            <li>Native SDKs - XCode &and; the Android SDK</li>
+            <li>Cordova / PhoneGap CLI<a href="http://cordova.apache.org/"> <i class="ion-link"></i></a></li>
+            <li>Native SDKs - XCode &amp; the Android SDK</li>
           </ul>
 				</section>
 
         <section>
           <h2>How it works</h2>
-          <img alt="Phonegap image of how code is execute both native and JS">
+          <img alt="Phonegap image of how code is execute both native and JS" src="img/pg_architecture.png">
         </section>
 
 				<section>
-					<h2>Clarification - PhoneGap == Cordova</h2>
+					<h2>PhoneGap == Cordova</h2>
 					<ul>
             <li>Cordova is an Apache project (OS)</li>
             <li>PhoneGap is powered by Cordova</li>
             <li>PhoneGap is owned by Adobe</li>
             <li>PhoneGap provides additional services</li>
+            <li>I'll use Cordova / PhoneGap interchangibly</li>
           </ul>
 				</section>
-
-        <section>
-          <h2>A few more assumptions</h2>
-          <ul>
-            <li>I'll use Cordova / PhoneGap interchangibly</li>
-            <li>The rest of the talk, we are creating hybrid apps</li>
-          </ul>
-        </section>
 
         <section>
           <h2>Getting started with Hybrid Dev</h2>
           <ul>
             <li>Roll your own framework</li>
             <li>jQuery Mobile / Sencha / OnSen</li>
-            <li><a href="http://ionicframework.com">Ionic Framework</a></li>
+            <li>Ionic Framework <a href="http://ionicframework.com"><i class="ion-link"></i></a></li>
           </ul>
         </section>
 
@@ -205,27 +240,28 @@
             <li>Setting up mobile app states</li>
             <li>Templates for HTML/Sass/CSS</li>
             <li>Handling some native look/feel</li>
-            <li>Using Plugins with Callbacks</li>
+            <li>Using Plugins</li>
           </ul>
         </section>
 
         <section>
           <h2>Solutions Ionic Provides</h2>
           <ul>
-            <li><a href="https://github.com/driftyco/ionic-box">The Ionic Box</a> - Vagrant set up for Android SDKs</li>
-            <li><a href="https://github.com/driftyco/ionic-app-base">Starter templates</a> with Tabs or slide out menus</li>
+            <li>The Ionic Box <a href="https://github.com/driftyco/ionic-box"><i class="ion-link"></i></a> - Vagrant set up for Android SDKs</li>
+            <li>Starter templates <a href="https://github.com/driftyco/ionic-app-base"><i class="ion-link"></i></a> with Tabs or slide out menus</li>
             <li>Templates for UI-router states - controllers / views</li>
             <li>Template for customizable SASS sheets</li>
             <li>Controls &amp; animations that look native</li>
-            <li><a href="http://ngcordova.com/">ngCordova</a> - Promises for verified plugins</li>
+            <li>ngCordova <a href="http://ngcordova.com/"><i class="ion-link"></i></a> - Promises for verified plugins</li>
           </ul>
         </section>
 
         <section>
           <h2>Additional conveniences from Ionic</h2>
           <ul>
-            <li>Keyboard plugin - to help with native hide/show/utility</li>
-            <li>Native Scrolling</li>
+            <li>Convention over configuration</li>
+            <li>Keyboard plugin - native hide/show/utility</li>
+            <li>Native scrolling</li>
             <li>Error handling / catchers</li>
             <li>App ready event</li>
             <li>collection-repeat - render lists of tons of items with no performance hit</li>
@@ -233,14 +269,24 @@
         </section>
 
         <section>
-          <h2>Lets Focus on Ionic Framework</h2>
+          <h1>Did I mention</h1>
+          <h1>it comes with ICONS?!</h1>
+          <p>
+            <i class="ion-wand"></i><i class="ion-thumbsup"></i>
+            <i class="ion-ios7-pulse-strong"></i>
+            <i class="ion-social-usd-outline"></i>
+            <i class="ion-social-bitcoin-outline"></i>
+          </p>
+        </section>
+
+        <section>
+          <h2>Ionic Framework gives the happy path</h2>
           <ul>
             <li>Built with AngularJS</li>
-            <li>Ionic starts you on the happy path</li>
-            <li>Ionic gives us common ground</li>
             <li>Huge community support</li>
             <li>Framework with UI elements - list, buttons, icons</li>
             <li>JS controls with delegates</li>
+            <li>Frequent release cycles</li>
           </ul>
         </section>
 
@@ -266,8 +312,8 @@ cordova platform add ios
         <section>
           <h2>What was set up?</h2>
           <ul>
-            <li>Bower - packages for ionic &amp; dependencies</li>
-            <li>npm - package.json with dependencies</li>
+            <li>Bower</li>
+            <li>npm</li>
             <li>Customizable SASS sheet - ionic.app.scss</li>
             <li>Gulpfile - tasks for sass compilation &amp; watching</li>
             <li>Boilerplate App</li>
@@ -278,7 +324,7 @@ cordova platform add ios
 				<section>
 					<h2>What about the boilerplate app?</h2>
 					<ul>
-            <li>www folder - with css/img/js/lib/templates</li>
+            <li>www folder - with css, img, js, lib, templates</li>
             <li>js/app.js - app routing for states / templates</li>
             <li>js/controllers.js - Angular JS Controllers</li>
             <li>js/services.js - AngularJS services</li>
@@ -295,19 +341,119 @@ cordova platform add ios
           </ul>
 				</section>
 
+        <section>
+        <h2>Top notch documentation</h2>
+        <p>Let's look at it</p>
+        </section>
+
 				<section>
-          <iframe src="http://ionicframework.com/docs/components" style="height: 800px; width: 100%;">
+          <iframe src="http://ionicframework.com/docs/components/" style="height: 800px; width: 100%;">
           </iframe>
         </section>
 
         <section>
-          <h2>Let's peek at some code...</h2>
-          <a href="https://github.com/driftyco/ionic-starter-tabs/find/master" target="_blank">Ionic Tabs Boilerplate Code</a>
-          <!-- <iframe src="https://github.com/driftyco/ionic-starter-tabs" style="height: 800px; width: 100%;"></iframe> -->
+          <h2>Action sheets</h2>
+          <img src="img/actionSheet.gif">
         </section>
 
         <section>
-          <h2>Plugins for Native Functionality</h2>
+          <h2>Side menus</h2>
+          <img src="img/sidemenu.gif">
+        </section>
+
+        <section>
+          <h2>Slide boxes</h2>
+          <img src="img/slideBox.gif">
+        </section>
+
+        <section>
+          <h2>Let's peek at boilerplate code</h2>
+        </section>
+
+        <section>
+          <pre><code>
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
+
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
+
+    // setup an abstract state for the tabs directive
+    .state('tab', {
+      url: "/tab",
+      abstract: true,
+      templateUrl: "templates/tabs.html"
+    })
+
+    // Each tab has its own nav history stack:
+
+    .state('tab.dash', {
+      url: '/dash',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/tab-dash.html',
+          controller: 'DashCtrl'
+        }
+      }
+    })
+
+    .state('tab.friends', {
+      url: '/friends',
+      views: {
+        'tab-friends': {
+          templateUrl: 'templates/tab-friends.html',
+          controller: 'FriendsCtrl'
+        }
+      }
+    })
+    .state('tab.friend-detail', {
+      url: '/friend/:friendId',
+      views: {
+        'tab-friends': {
+          templateUrl: 'templates/friend-detail.html',
+          controller: 'FriendDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.account', {
+      url: '/account',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-account.html',
+          controller: 'AccountCtrl'
+        }
+      }
+    });
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/tab/dash');
+
+});
+          </code></pre>
+          <button class="code_enlarge">Enlarge</button>
+        </section>
+
+        <section>
+          <h2>Where to find plugins</h2>
           <ul>
             <li><a href="http://plugins.cordova.io">Cordova Plugin Registry</a></li>
             <li><a href="http://plugreg.com">PlugReg - plugin registry</a></li>
@@ -320,7 +466,6 @@ cordova platform add ios
           <h2>Let others see your app!</h2>
 
           <ul>
-            <li>If not too reliant on Native Plugins, you have options</li>
             <li>PhoneGap developer app</li>
             <li>Ionic View app</li>
             <li>Publishing to web - Safari / Chrome / Browser</li>
@@ -331,14 +476,13 @@ cordova platform add ios
           <h2>Let others install your app!</h2>
           <ul>
             <li><a href="https://build.phonegap.com/">PhoneGap Build</a></li>
-            <li><a href="http://testflightapp.com">TestFlight</a></li>
-            <li><a href="http://hockeyapp.com">HockeyApp</a></li>
+            <li><a href="http://testflightapp.com">TestFlight</a> / <a href="http://hockeyapp.com">HockeyApp</a></li>
             <li><a href="https://www.npmjs.org/package/cordova-deploy">Cordova Deploy</a></li>
           </ul>
         </section>
 
         <section>
-          <h2>Debugging the Apps</h2>
+          <h2>Debugging</h2>
           <ul>
             <li>Full debugger support</li>
             <li>iOS - Safari Inspector Tools</li>
@@ -354,6 +498,7 @@ cordova platform add ios
             <li><a href="https://rollbar.com/">RollBar</a></li>
             <li><a href="https://errorception.com/">Errorception</a></li>
             <li><a href="http://blog.newrelic.com/2014/03/13/javascript-error-reporting-ajax-timing-new-relic/">New Relic</a></li>
+            <li>And many more..</li>
           </ul>
         </section>
 
@@ -369,6 +514,8 @@ cordova platform add ios
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+
 
 		<script>
 
@@ -398,7 +545,35 @@ cordova platform add ios
 				]
 			});
 
-		</script>
+      var codeHighlight = false;
 
+        $(function(){
+            $(document).on("click", ".code_enlarge", function(e) {
+                var code = $(this).parent().find("code");
+                $("#code_highlight").css("display", "block");
+                $("#code_highlight").find("code").text(code.text());
+                codeHighlight = true;
+                hljs.highlightBlock($("#code_highlight").find("code")[0]);
+                e.preventDefault();
+                return false;
+            });
+
+            $(document).on("click", "#code_close", function(e){
+                if(codeHighlight) {
+                    $("#code_highlight").css("display", "none");
+                    codeHighlight = false;
+                }
+                e.preventDefault();
+                return false;
+            });
+        })
+
+		</script>
+    <div id="code_highlight" style="display: none">
+        <pre><code data-trim contenteditable>
+        </code></pre>
+
+        <button id="code_close" style="position: absolute; top: 0; right: 100px;">Close</button>
+    </div>
 	</body>
 </html>
