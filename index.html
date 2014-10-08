@@ -48,7 +48,7 @@
       .reveal section img {
         background-color: transparent;
         border: 0;
-        box-shadow: 0
+        box-shadow: none !important;
       }
       .reveal .pill {
         border: solid 1px white;
@@ -453,11 +453,65 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         </section>
 
         <section>
+          <pre><code>
+angular.module('starter.services', [])
+
+/**
+ * A simple example service that returns some data.
+ */
+.factory('Friends', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var friends = [
+    { id: 0, name: 'Scruff McGruff' },
+    { id: 1, name: 'G.I. Joe' },
+    { id: 2, name: 'Miss Frizzle' },
+    { id: 3, name: 'Ash Ketchum' }
+  ];
+
+  return {
+    all: function() {
+      return friends;
+    },
+    get: function(friendId) {
+      // Simple index lookup
+      return friends[friendId];
+    }
+  }
+});
+          </code></pre>
+          <button class="code_enlarge">Enlarge</button>
+        </section>
+
+        <section>
+          <pre><code>
+angular.module('starter.controllers', [])
+
+.controller('DashCtrl', function($scope) {
+})
+
+.controller('FriendsCtrl', function($scope, Friends) {
+  $scope.friends = Friends.all();
+})
+
+.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
+  $scope.friend = Friends.get($stateParams.friendId);
+})
+
+.controller('AccountCtrl', function($scope) {
+});
+
+          </code></pre>
+          <button class="code_enlarge">Enlarge</button>
+        </section>
+
+        <section>
           <h2>Where to find plugins</h2>
           <ul>
-            <li><a href="http://plugins.cordova.io">Cordova Plugin Registry</a></li>
-            <li><a href="http://plugreg.com">PlugReg - plugin registry</a></li>
-            <li><a href="https://build.phonegap.com/plugins">PhoneGap Build Plugins</a></li>
+            <li>Cordova Plugin Registry <a href="http://plugins.cordova.io"><i class="ion-link"></i></a></li>
+            <li>PlugReg - plugin registry <a href="http://plugreg.com"><i class="ion-link"></i></a></li>
+            <li>PhoneGap Build Plugins <a href="https://build.phonegap.com/plugins"><i class="ion-link"></i></a></li>
             <li>Github - search at your own risk!</li>
           </ul>
         </section>
@@ -475,9 +529,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         <section>
           <h2>Let others install your app!</h2>
           <ul>
-            <li><a href="https://build.phonegap.com/">PhoneGap Build</a></li>
-            <li><a href="http://testflightapp.com">TestFlight</a> / <a href="http://hockeyapp.com">HockeyApp</a></li>
-            <li><a href="https://www.npmjs.org/package/cordova-deploy">Cordova Deploy</a></li>
+            <li>PhoneGap Build <a href="https://build.phonegap.com/"><i class="ion-link"></i></a></li>
+            <li>TestFlight <a href="http://testflightapp.com"><i class="ion-link"></i></a></li>
+            <li>HockeyApp <a href="http://hockeyapp.com"><i class="ion-link"></i></a></li>
+            <li>Cordova Deploy <a href="https://www.npmjs.org/package/cordova-deploy"><i class="ion-link"></i></a></li>
           </ul>
         </section>
 
@@ -495,10 +550,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         <section>
           <h2>Error reporting</h2>
           <ul>
-            <li><a href="https://rollbar.com/">RollBar</a></li>
-            <li><a href="https://errorception.com/">Errorception</a></li>
-            <li><a href="http://blog.newrelic.com/2014/03/13/javascript-error-reporting-ajax-timing-new-relic/">New Relic</a></li>
-            <li>And many more..</li>
+            <li>Tons of JS Reporters, use your favorite</li>
           </ul>
         </section>
 
